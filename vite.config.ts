@@ -17,8 +17,6 @@ export default defineConfig({
     open: false,
     host: true,
     allowedHosts: ['.trycloudflare.com', '.app.github.dev', 'localhost'],
-    hmr: {
-      clientPort: 443,
-    },
+    hmr: process.env.CODESPACE_NAME ? { clientPort: 443 } : undefined,
   },
 })
