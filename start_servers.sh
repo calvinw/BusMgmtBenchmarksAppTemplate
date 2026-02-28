@@ -6,12 +6,12 @@
 set -e
 
 WORKSPACE="${CODESPACE_VSCODE_FOLDER:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
-SERVER_LOG="$HOME/.agentic-web-app-server.log"
+SERVER_LOG="$HOME/.busmgmt-server.log"
 DOMAIN="${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-app.github.dev}"
 
 echo ""
 echo "┌──────────────────────────────────────┐"
-echo "│     agentic-web-app Setup            │"
+echo "│     BusMgmtBenchmarks Setup          │"
 echo "└──────────────────────────────────────┘"
 echo ""
 
@@ -31,15 +31,15 @@ echo ""
 # ── Step 2: Stop any running server and restart ─────────────────────────────
 echo "┄┄┄ Step 2/2: Starting dev server ┄┄┄"
 
-pids=$(lsof -ti :5173 2>/dev/null) || true
+pids=$(lsof -ti :3000 2>/dev/null) || true
 if [ -n "$pids" ]; then
-  echo "→ Stopping existing server on port 5173 (PID $pids)..."
+  echo "→ Stopping existing server on port 3000 (PID $pids)..."
   kill "$pids" 2>/dev/null || true
   sleep 1
 fi
 
-echo "→ Starting agentic-web-app dev server..."
-nohup bash -c "cd '$WORKSPACE' && npm run dev -- --host" > "$SERVER_LOG" 2>&1 &
+echo "→ Starting BusMgmtBenchmarks dev server..."
+nohup bash -c "cd '$WORKSPACE' && npm run dev" > "$SERVER_LOG" 2>&1 &
 echo "✓ Server started."
 echo ""
 
@@ -49,9 +49,9 @@ echo "│     ✓ Ready!                         │"
 echo "└──────────────────────────────────────┘"
 echo ""
 if [ -n "$CODESPACE_NAME" ]; then
-  echo "  App : https://${CODESPACE_NAME}-5173.${DOMAIN}"
+  echo "  App : https://${CODESPACE_NAME}-3000.${DOMAIN}"
 else
-  echo "  App : http://localhost:5173"
+  echo "  App : http://localhost:3000"
 fi
 echo ""
 echo "  Log:"
