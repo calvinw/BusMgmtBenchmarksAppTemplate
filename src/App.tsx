@@ -43,7 +43,6 @@ function App() {
       FROM financials f
       JOIN company_info c ON f.company_name = c.company
       WHERE f.year = ${year}
-      ORDER BY f.\`Net Revenue\` DESC
     `
     const url = `https://www.dolthub.com/api/v1alpha1/calvinw/BusMgmtBenchmarks?q=${encodeURIComponent(query)}`
 
