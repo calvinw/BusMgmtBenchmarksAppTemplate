@@ -1,50 +1,59 @@
-# agentic-web-app
+# BusMgmtBenchmarksApp
 
-A simple counter app built with React, TypeScript, Vite, Tailwind CSS, and shadcn/ui.
+A web app for Business Management Benchmarks built with React, TypeScript, Vite, Tailwind CSS, and shadcn/ui.
 
-## Getting Started (Codespace or Local)
+## Getting Started
 
-After creating a Codespace (or cloning locally), nothing runs automatically. Open a terminal and use the scripts below depending on what you want to do.
+Follow these steps in order to set up your own copy of this project.
 
-### Start the Dev Server
+---
 
-```bash
-$ start_servers.sh
-```
+### Step 1 — Create your own copy of this project
 
-Installs dependencies (if needed) and starts the Vite dev server on port 5173. Safe to re-run at any time to restart the server.
+At the top of this page, click the green **"Use this template"** button, then choose **"Create a new repository"**.
 
-### Install an AI Coding Assistant
+Give your new repository a name (for example: `BusMgmtBenchmarksApp`) and click **"Create repository"**. This creates your own personal copy of the project on GitHub.
 
-```bash
-$ install_agent_tool.sh
-```
+---
 
-Presents a menu to install one of the following:
+### Step 2 — Open a Codespace
 
-1. **Claude Code**
-2. **Opencode**
-3. **Gemini CLI**
-4. **Codex CLI**
+Inside your new repository, click the green **"Code"** button, then choose the **"Codespaces"** tab, then click **"Create codespace on main"**.
 
-You will have to authenticate for each tool accordingly.
+This opens a full coding environment in your browser — no installation required on your computer.
 
+---
 
-### Share Your Terminal (upterm)
+### Step 3 — Start the dev server
+
+Once your Codespace has loaded, open a terminal (if one isn't already open) and run:
 
 ```bash
-$ install_upterm.sh
+./start_servers.sh
 ```
 
-Installs [upterm](https://github.com/owenthereal/upterm) for sharing your terminal session. After installation, run:
+This installs the app's dependencies and starts the development server. After a few seconds you'll see a link to open the app in your browser.
 
-```bash
-$ upterm host --accept
-```
+---
 
-## Github Page for this Project
+### Step 4 — Start coding with an AI assistant
 
-The app is automatically deployed to GitHub Pages on every push to `main`. This means if you created a new repo then you need to enable github pages yourself.
+You can use either of the following AI coding tools to help you build and modify the app:
+
+- **Claude Code** — type `claude` in the terminal to start
+- **GitHub Copilot** — available directly in the editor
+
+---
+
+### Step 5 — Enable GitHub Pages
+
+This will publish your app as a live website that anyone can visit.
+
+In your repository, click **"Settings"**, then click **"Pages"** in the left sidebar. Under **"Source"**, select **"GitHub Actions"** and save.
+
+From now on, every time you push a change to `main`, your app will automatically be published. You can find the link to your live site at the bottom of the Pages settings page.
+
+---
 
 ## Tech Stack
 
@@ -52,16 +61,3 @@ The app is automatically deployed to GitHub Pages on every push to `main`. This 
 - [React](https://react.dev/) + TypeScript
 - [Tailwind CSS v4](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/) — component library
-
-## Adding shadcn Components
-
-```bash
-$ npx shadcn@latest add <component-name>
-```
-
-## Build
-
-```bash
-$ npm run build    # production build
-$ npm run preview  # preview the production build locally
-```
