@@ -55,6 +55,26 @@ From now on, every time you push a change to `main`, your app will automatically
 
 ---
 
+## The BusMgmt Database
+
+This project is designed to connect to a live business data database called **BusMgmtBenchmarks**. Think of it like a giant spreadsheet in the cloud that holds real financial data for dozens of companies — things like revenue, profit margins, and growth rates — organized by year and industry.
+
+Your app can pull data from this database at any time using something called a **REST API**. This is just a way of asking the database a question (like "show me all companies in the retail segment") and getting the answer back as data your app can display.
+
+The database is free and open — no password or login required.
+
+### For the AI assistant
+
+When you ask Claude or Copilot to build features that use the database, point it to the API documentation included in this project:
+
+📄 **[RestApiBusMgmtDoltDatabase.md](./RestApiBusMgmtDoltDatabase.md)**
+
+This file explains what data is available, how to write queries, and what the responses look like. You can say something like:
+
+> *"Using the REST API documented in RestApiBusMgmtDoltDatabase.md, add a feature that shows revenue data for a selected company."*
+
+---
+
 ## Tech Stack
 
 - [Vite](https://vite.dev/) — build tool and dev server
